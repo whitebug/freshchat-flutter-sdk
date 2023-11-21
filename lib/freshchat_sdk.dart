@@ -134,6 +134,7 @@ class Freshchat {
   static void init(String appId, String appKey, String domain,
       {bool responseExpectationEnabled = true,
       bool teamMemberInfoVisible = true,
+      bool cameraCaptureEnabled = true,
       bool gallerySelectionEnabled = true,
       bool userEventsTrackingEnabled = true,
       String? stringsBundle,
@@ -147,7 +148,7 @@ class Freshchat {
       'domain': domain,
       'responseExpectationEnabled': responseExpectationEnabled,
       'teamMemberInfoVisible': teamMemberInfoVisible,
-      'cameraCaptureEnabled': false,
+      'cameraCaptureEnabled': cameraCaptureEnabled,
       'gallerySelectionEnabled': gallerySelectionEnabled,
       'userEventsTrackingEnabled': userEventsTrackingEnabled,
       'stringsBundle': stringsBundle,
@@ -219,7 +220,7 @@ class Freshchat {
   static void setBotVariables(Map botVariables, Map specificVariables) async {
     await _channel.invokeMethod('setBotVariables', <String, Map>{
       'botVariables': botVariables,
-      'specificVariables':specificVariables
+      'specificVariables': specificVariables
     });
   }
 
